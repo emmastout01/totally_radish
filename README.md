@@ -1,6 +1,6 @@
-# Name of Project
+# Totally Radish
 
-One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
+New to being a vegan? Dazed and confused starting at incomprehendible lists of ingredients for products? Totally radish allows you to quickly make sure a product you are eating/buying is 100% vegan-friendly! Just take a photo or upload an existing photo to the app and it'll do the hard work for you.
 
 ## Built With
 
