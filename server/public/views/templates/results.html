@@ -1,36 +1,41 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
-    <div ng-show="rc.isVegan">
-        <!-- I want to show this div when the product is vegan. So, when the results come back and nothing is vegan, ng-show will be true. -->
-        <div class="f-modal-alert">
-            <div class="f-modal-icon f-modal-success animate">
-                <span class="f-modal-line f-modal-tip animateSuccessTip"></span>
-                <span class="f-modal-line f-modal-long animateSuccessLong"></span>
-                <div class="f-modal-placeholder"></div>
-                <div class="f-modal-fix"></div>
+    <div>
+        <div class="resultContainer" ng-show="rc.isVegan">
+            <!-- I want to show this div when the product is vegan. So, when the results come back and nothing is vegan, ng-show will be true. -->
+            <div class="f-modal-alert">
+                <div class="f-modal-icon f-modal-success animate">
+                    <span class="f-modal-line f-modal-tip animateSuccessTip"></span>
+                    <span class="f-modal-line f-modal-long animateSuccessLong"></span>
+                    <div class="f-modal-placeholder"></div>
+                    <div class="f-modal-fix"></div>
+                </div>
             </div>
-        </div>
-        It's vegan! :)
-    </div>
-
-    <div ng-show="!rc.isVegan">
-        <div class="f-modal-alert">
-            <div class="f-modal-icon f-modal-error animate">
-                <span class="f-modal-x-mark">
-                    <span class="f-modal-line f-modal-left animateXLeft"></span>
-                    <span class="f-modal-line f-modal-right animateXRight"></span>
-                </span>
-                <div class="f-modal-placeholder"></div>
-                <div class="f-modal-fix"></div>
-            </div>
+            <br>
+            <span class="primaryResult">It's vegan!</span>
         </div>
 
-        It's not vegan. :(
+        <div class="resultContainer" ng-show="!rc.isVegan">
+            <div class="f-modal-alert">
+                <div class="f-modal-icon f-modal-error animate">
+                    <span class="f-modal-x-mark">
+                        <span class="f-modal-line f-modal-left animateXLeft"></span>
+                        <span class="f-modal-line f-modal-right animateXRight"></span>
+                    </span>
+                    <div class="f-modal-placeholder"></div>
+                    <div class="f-modal-fix"></div>
+                </div>
+            </div>
+            <br>
+            <span class="primaryResult">Not vegan</span>
+            <p>Contains: <span class="nonVeganIngredient" ng-repeat="ingredient in rc.nonVeganIngredients">  {{ingredient}}  </span></p>
+            <div ng-repeat = "description in rc.nonVeganDescriptions">{{description}} </div> <br><br><br>
+        </div>
     </div>
-<br>
-<br>
-<!-- This button is just a tester so we can see both the 'vegan' and 'not vegan' results. -->
-<button class="btn btn-default" ng-click="rc.showResults()">Toggle results</button>
+    <br>
+    <br>
+    <!-- This button is just a tester so we can see both the 'vegan' and 'not vegan' results. -->
+    <button class="btn btn-default" ng-click="rc.showResults()">Toggle results</button>
 
 
 </div>
