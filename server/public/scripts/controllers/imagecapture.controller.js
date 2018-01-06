@@ -12,30 +12,7 @@ function ImageCapture(Upload,UserService,$http) {
 
     image.uploadFile = function() {
 
-    //  var fileReader = new FileReader();
-//fileReader.readAsDataURL(image.file);
-//fileReader.onload = function (e) {
-  //var dataUrl = e.target.result;
-  //var base64Data = dataUrl.substr(dataUrl.indexOf('base64,') + 'base64,'.length);
-
-
-  /*    var requestData = {
-                "requests": [
-                    {
-                      "image": {
-                      "content": base64Data
-                    },
-                    "features": [
-                        {
-                        "type": "TEXT_DETECTION"
-                        }
-                      ]
-                    }
-                  ]
-                }; //end of requestData
-    //  $http.post(API_URL,requestData).then(function(response){
-      //  console.log(response);
-    //  })*/
+      move();
        Upload.upload({
          url: 'https://api.ocr.space/parse/image',
           data: {
@@ -45,6 +22,7 @@ function ImageCapture(Upload,UserService,$http) {
           //  url: API_URL,
             //data:requestData
         }).then(function(response) {
+          console.log(response.data);
           image.data = response.data.ParsedResults[0].ParsedText;
          console.log(image.data);
          // console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ', resp.data);
@@ -64,5 +42,19 @@ function ImageCapture(Upload,UserService,$http) {
 
     }; //End of processData function
 
+};
 
+function move() {
+    var elem = document.getElementById("myBar"); 
+    var width = 1;
+    var id = setInterval(frame, 30);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+            elem.style.width = 1 + '%';
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+        }
+    }
 }

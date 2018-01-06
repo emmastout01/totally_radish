@@ -1,16 +1,20 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="row text-center">
+    <div id="myProgress">
+      <div id="myBar"></div>
+    </div>
         <form name="form" ng-submit="image.uploadFile()">
-
             <span class="btn btn-file">
 
                 <input type="file" ngf-select ng-model="image.file"  name="file" id="file" class="inputfile" accept="image/*" capture="camera"/>
                 <label class="btn" for="file"><span class="glyphicon glyphicon-open"></span>Choose a file</label>
             </span>
-            <button class="btn btn-warning btn-lg" type="submit">Upload</button>
+            <button class="btn btn-default" type="submit">Upload</button>
         </form>
     </div>
+
     <div class="row text-center">
                <h5 class="test">Image Preview:</h5>
                <img ngf-thumbnail="image.file">
-           </div>
+    </div>
+
