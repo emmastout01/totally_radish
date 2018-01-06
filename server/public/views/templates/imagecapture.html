@@ -1,0 +1,15 @@
+<div class="row text-center">
+        <form name="form" ng-submit="image.uploadFile()">
+
+            <span class="btn btn-file">
+
+                <input type="file" ngf-select ng-model="image.file"  name="file" id="file" class="inputfile" accept="image/*" capture="camera"/>
+                <label class="btn" for="file"><span class="glyphicon glyphicon-open"></span>Choose a file</label>
+            </span>
+            <button class="btn btn-warning btn-lg" type="submit">Upload</button>
+        </form>
+    </div>
+    <div class="row text-center">
+               <h5>Image Preview:</h5>
+               <img ngf-thumbnail="image.file">
+           </div>
