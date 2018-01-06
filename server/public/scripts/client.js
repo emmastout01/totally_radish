@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute','ngFileUpload']);
 
 /// Routes ///
 myApp.config(function($routeProvider, $locationProvider) {
@@ -25,6 +25,15 @@ myApp.config(function($routeProvider, $locationProvider) {
     .when('/info', {
       templateUrl: '/views/templates/info.html',
       controller: 'InfoController',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
+    })
+    .when('/image', {
+      templateUrl: '/views/templates/imagecapture.html',
+      controller: 'ImageCapture as image',
       resolve: {
         getuser : function(UserService){
           return UserService.getuser();

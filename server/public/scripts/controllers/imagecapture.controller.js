@@ -1,7 +1,6 @@
-angular.module('myApp')
-    .controller('ImageCapture', ImageCapture);
+myApp.controller('ImageCapture', ImageCapture);
 
-function ImageCapture(Upload) {
+function ImageCapture(Upload,UserService,$http) {
 
     var image = this;
     var API_KEY = '25f539a74f88957';
@@ -42,7 +41,7 @@ function ImageCapture(Upload) {
             image.progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
             // console.log('progress: ' + receipt.progressPercentage + '% ' + evt.config.data.file.name);
         });*/
-        
+
     }; //End of uploadFile function
 
     image.processData = function() {
