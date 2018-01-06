@@ -1,6 +1,21 @@
-<div ng-include="'views/partials/nav.html'"></div>
+<!-- <div ng-include="'views/partials/nav.html'"></div> -->
 <div class="container">
 
     <h1 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h1>
-    <button class="btn btn-primary" ng-click="uc.userService.logout()">Log Out</button>
+    <!-- <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button> -->
+    <div class="row">
+	    <div class="col-sm-4 col-md-4 text-center"></div>
+	    <div class="col-sm-4 col-md-4 text-center">
+	      <button class="btn btn-default">Upload</button>
+	    </div>
+	    <div class="col-sm-4 col-md-4 text-center"></div>
+    </div>
+    <div class="row">
+	    <div class="col-sm-4 col-md-4 text-center"></div>
+	    <div class="col-sm-4 col-md-4 text-center">
+	      <button class="btn btn-default">Take a Picture</button>
+	    </div>
+	    <div class="col-sm-4 col-md-4 text-center"></div>
+	</div>
+  </div>
 </div>

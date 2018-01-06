@@ -16,6 +16,22 @@ body, html {
   padding: 15px;
 }
 
+.login {
+  font-size: 100px;
+  margin-top: 100px;
+}
+
+.username {
+  font-size: 50px;
+}
+
+.password {
+  font-size: 50px;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+
 #entryForm {
   margin-top: 14px;
 }
