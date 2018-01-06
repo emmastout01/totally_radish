@@ -1,4 +1,4 @@
-myApp.controller('ResultsController', function(UserService) {
+myApp.controller('ResultsController', function(UserService, NutritionService) {
     console.log('ResultsController created');
     var vm = this;
     vm.userService = UserService;
