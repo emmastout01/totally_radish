@@ -31,6 +31,10 @@ myApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
+    .when('/results', {
+      templateUrl: '/views/templates/results.html',
+      controller: 'ResultsController as rc',
+    })
     .when('/image', {
       templateUrl: '/views/templates/imagecapture.html',
       controller: 'ImageCapture as image',
