@@ -8,10 +8,9 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
+    <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
         <form name="form" ng-submit="image.uploadFile()">
                 <input ngf-select ng-model="image.file"  name="file" id="file" placeholder="Choose File" class="btn btn-default btn-block" accept="image/*" capture="camera"/>
-                <!-- <label class="btn" for="file"><span class="glyphicon glyphicon-open"></span>Choose a file</label> -->
             <button ng-disabled="image.file == null" class="btn btn-green btn-block" type="submit" ng-click="loadPic=true">Upload</button>
         </form>
     </div>
@@ -19,8 +18,14 @@
 
 
 <div class="row text-center" ng-if="image.file != null">
-   <h5 class="login">Image Preview:</h5>
-   <img height="25%" width="25%" ngf-thumbnail="image.file" />
+    <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
+        <h5 class="login">Image Preview:</h5>
+    </div>
+</div>
+<div class="row text-center">
+    <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
+        <img height="60%" width="60%" ngf-thumbnail="image.file" />
+    </div>
 </div>
 </div>
 
