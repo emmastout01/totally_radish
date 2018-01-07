@@ -3,6 +3,10 @@ var myApp = angular.module('myApp', ['ngRoute','ngFileUpload']);
 /// Routes ///
 myApp.config(function($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('');
+<<<<<<< HEAD
+=======
+  //console.log('myApp -- config')
+>>>>>>> 878beddb7dbc878082760b96e8386b2545ac0952
   $routeProvider
     .when('/home', {
       templateUrl: '/views/templates/home.html',
