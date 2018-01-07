@@ -23,11 +23,11 @@ function ImageCapture(Upload,UserService,$http, NutritionService) {
           //  url: API_URL,
             //data:requestData
         }).then(function(response) {
-          console.log(response.data);
+          //console.log(response.data);
           image.data = response.data.ParsedResults[0].ParsedText;
-         console.log(image.data);
+         //console.log(image.data);
          NutritionService.parameter = image.data;
-         console.log('ns param', NutritionService.parameter);
+         console.log('image text: ', NutritionService.parameter);
          // console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ', resp.data);
          image.processData();
 
