@@ -1,20 +1,28 @@
 <div ng-include="'views/partials/nav.html'"></div>
-<div class="row text-center">
-    <div id="myProgress">
-      <div id="myBar"></div>
+<div class="container">
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div ng-if="loadPic == true" id="myProgress">
+          <div id="myBar"></div>
+        </div>
     </div>
+</div>
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
         <form name="form" ng-submit="image.uploadFile()">
-            <span class="btn btn-file">
-
-                <input type="file" ngf-select ng-model="image.file"  name="file" id="file" class="inputfile" accept="image/*" capture="camera"/>
-                <label class="btn" for="file"><span class="glyphicon glyphicon-open"></span>Choose a file</label>
-            </span>
-            <button class="btn btn-default" type="submit">Upload</button>
+                <input ngf-select ng-model="image.file"  name="file" id="file" placeholder="Choose File" class="btn btn-default btn-block" accept="image/*" capture="camera"/>
+                <!-- <label class="btn" for="file"><span class="glyphicon glyphicon-open"></span>Choose a file</label> -->
+            <button ng-disabled="image.file == null" class="btn btn-green btn-block" type="submit" ng-click="loadPic=true">Upload</button>
         </form>
     </div>
+</div>
 
-    <div class="row text-center">
-               <h5 class="test">Image Preview:</h5>
-               <img ngf-thumbnail="image.file">
-    </div>
+
+<div class="row text-center" ng-if="image.file != null">
+   <h5 class="login">Image Preview:</h5>
+   <img height="25%" width="25%" ngf-thumbnail="image.file" />
+</div>
+</div>
+
+
 
