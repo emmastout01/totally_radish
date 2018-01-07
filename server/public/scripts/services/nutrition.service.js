@@ -30,6 +30,7 @@ myApp.service('NutritionService', function($http, $location){
         $http.get('/vegan/' + ingredientList).then(function(response) {
             console.log('non-vegan ingredients: ', response.data);
             self.animalProducts = response.data;
+            $location.path("/results");
         })
     }
 

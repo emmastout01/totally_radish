@@ -1,7 +1,7 @@
 <div ng-include="'views/partials/nav.html'"></div>
-<div class="container">
+<div class="container col-sm-5 col-md-4 col-sm-offset-4 col-lg-4">
     <div>
-        <div class="resultContainer" ng-show="rc.isVegan">
+        <div class="resultContainer" class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-4" ng-show="rc.isVegan">
             <!-- I want to show this div when the product is vegan. So, when the results come back and nothing is vegan, ng-show will be true. -->
             <div class="f-modal-alert">
                 <div class="f-modal-icon f-modal-success animate">
@@ -29,7 +29,7 @@
             <br>
             <span class="primaryResult">Not vegan</span>
             <p>Contains: <span class="nonVeganIngredient" ng-repeat="ingredient in rc.displayIngredients">  {{ingredient}}  </span></p>
-            <div ng-repeat = "description in rc.displayDescriptions">{{description}} </div> <br><br><br>
+            <div class="col-lg-6" ng-repeat = "description in rc.displayDescriptions">{{description}} </div> <br><br><br>
         </div>
     </div>
     <br>
