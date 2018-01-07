@@ -27,7 +27,6 @@ function ImageCapture(Upload,UserService,$http, NutritionService) {
           image.data = response.data.ParsedResults[0].ParsedText;
          console.log(image.data);
          NutritionService.parameter = image.data;
-         console.log('ns param', NutritionService.parameter);
          // console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ', resp.data);
          image.processData();
 

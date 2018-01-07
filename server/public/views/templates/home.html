@@ -1,25 +1,26 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-4 col-md-4 text-center"></div>
-    <div class="col-sm-4 col-md-4 text-center">
-      <h1 class="lead login">Login</h1>
+  <div class="col-sm-4 col-sm-offset-4 text-center">
+      <h1 class="login">LET'S GET STARTED!</h1>
       <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h1>
       <form ng-submit="lc.login()">
         <div class="form-group">
           <div>
-              <!-- <label for="username" class="username">Username: </label> -->
-              <input type="text" placeholder="username" ng-model="lc.user.username" class="form-control form"/>
-          </div>
-          <div>
-              <!-- <label for="password" class="password">Password: </label> -->
-              <input type="password" placeholder="password" ng-model="lc.user.password" class="form-control"/>
-          </div>
-          <div>
-            <input class="btn btn-default" type="submit" name="submit" value="Log In" />
-            <a href="#register">Register</a>
+              <input type="text" placeholder="Username" ng-model="lc.user.username" class="form-control form"/>
           </div>
         </div>
+        <div class="form-group">
+          <div>
+              <input type="password" placeholder="Password" ng-model="lc.user.password" class="form-control"/>
+          </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-green btn-block" type="submit" name="submit">SIGN IN</button>
+        </div>
       </form>
+      <div class="form-group">
+          <a class="btn btn-default create-account btn-block" href="#register">CREATE ACCOUNT</a>
+        </div>
     </div>
     <div class="col-sm-4 col-md-4 text-center"></div>
   </div>
