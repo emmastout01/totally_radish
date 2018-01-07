@@ -1,31 +1,34 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
-<div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-        <div ng-if="loadPic == true" id="myProgress">
-          <div id="myBar"></div>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div ng-if="loadPic == true" id="myProgress">
+                <div id="myBar"></div>
+            </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
-        <form name="form" ng-submit="image.uploadFile()">
-                <input ngf-select ng-model="image.file"  name="file" id="file" placeholder="Choose File" class="btn btn-default btn-block" accept="image/*" capture="camera"/>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <form name="form" ng-submit="image.uploadFile()">
+                <input ngf-select ng-model="image.file" name="file" id="file" placeholder="Choose File" class="btn btn-default btn-block"
+                    accept="image/*" capture="camera" />
                 <!-- <label class="btn" for="file"><span class="glyphicon glyphicon-open"></span>Choose a file</label> -->
-            <button ng-disabled="image.file == null" class="btn btn-green btn-block" type="submit" ng-click="loadPic=true">Upload</button>
-        </form>
+                <button ng-disabled="image.file == null" class="btn btn-green btn-block" type="submit" ng-click="loadPic=true">Upload</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row text-center" ng-if="image.file != null">
+        <h5 class="login">Image Preview:</h5>
+        <img height="25%" width="25%" ngf-thumbnail="image.file" />
     </div>
 </div>
 
 
-<div class="row text-center" ng-if="image.file != null">
-   <h5 class="login">Image Preview:</h5>
-   <img height="25%" width="25%" ngf-thumbnail="image.file" />
-</div>
-</div>
-
-<div class=resultContainer ng-show="">
-        <div class="resultContainer" ng-show="image.isVegan">
+<div class=resultContainer ng-init="image.showResults = false">
+    <div ng-if="image.showResults">
+        <div ng-show="image.isVegan">
             <!-- I want to show this div when the product is vegan. So, when the results come back and nothing is vegan, ng-show will be true. -->
             <div class="f-modal-alert">
                 <div class="f-modal-icon f-modal-success animate">
@@ -39,12 +42,12 @@
             <span class="primaryResult">It's vegan!</span>
         </div>
 
-        <div class="resultContainer" ng-show="!image.isVegan">
+        <div ng-show="!image.isVegan">
             <div class="f-modal-alert">
                 <div class="f-modal-icon f-modal-error animate">
                     <span class="f-modal-x-mark">
-                        <span class="f-modal-line f-modal-left animateXLeft"></span>
-                        <span class="f-modal-line f-modal-right animateXRight"></span>
+                        <span class="f-modal-line f-modal-left animateXLeft">{{image.displayIngredients}}</span>
+                        <span class="f-modal-line f-modal-right animateXRight">{{image.displayDescriptions}}</span>
                     </span>
                     <div class="f-modal-placeholder"></div>
                     <div class="f-modal-fix"></div>
@@ -52,10 +55,13 @@
             </div>
             <br>
             <span class="primaryResult">Not vegan</span>
-            <p>Contains: <span class="nonVeganIngredient" ng-repeat="ingredient in image.nonVeganIngredients">  {{ingredient}}  </span></p>
-            <div ng-repeat = "description in image.nonVeganDescriptions">{{description}} </div> <br><br><br>
+            <p>Contains:
+                <span class="nonVeganIngredient" ng-repeat="ingredient in image.nonVeganIngredients"> {{ingredient}} </span>
+            </p>
+            <div ng-repeat="description in image.nonVeganDescriptions">{{description}} </div>
+            <br>
+            <br>
+            <br>
         </div>
     </div>
-
-
-
+</div>

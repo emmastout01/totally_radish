@@ -4,6 +4,7 @@ myApp.service('NutritionService', function($http, $location){
     self.ingredientList = '';
     self.parameter = '';
     self.animalProducts = [];
+    self.showResults = false;
 
     
     self.getNutrition = function() {
