@@ -1,33 +1,48 @@
 var express = require('express');
 var router = express.Router();
-var pg = require('pg');
-var connectionString = '';
-
-//If we are running on Heroku, use the remote database (with SSL)
-if (process.env.DATABASE_URL != undefined) {
-  connectionString = process.env.DATABASE_URL + '?ssl=true';
-} else {
-  // running locally, use our local database instead
-  connectionString = 'postgres://localhost:5432/TotallyRadish';
-}
+var path = require('path');
+var pool = require('../modules/pool.js');
 
 //GET current ingredients;
-router.get('/', function (req, res) {
-  pg.connect(connectionString, function (err, client, done) {
+router.get('/:ingredients', function (req, res) {
+  console.log('we\'re here!');
+  var ingredients = req.params.ingredients;
+  console.log('ingredients', ingredients);
+  pool.connect(function (err, client, done) {
     if (err) {
       res.sendStatus(500);
     }
-
-    client.query('SELECT...', function (err, result) {
-      done();
-
+  var query = "insert into stringParse (ingredient) select unnest(string_to_array(UPPER('" + ingredients + "'), ', '));";
+    client.query(query, function (err, result) {
       if (err) {
         console.log(err);
         res.sendStatus(500);
       }
-
-      console.log(result.rows);
-      res.send(result.rows);
+      else {
+        console.log('in second query', query);
+        var secondQuery = "select * from vegan v inner join stringParse s on v.ingredient = s.ingredient;";
+        client.query(secondQuery, function (err, result) {
+          if (err) {
+            console.log(err);
+            res.sendStatus(500);
+          }
+          else {
+            console.log('result.rows', result.rows);
+            res.send(result.rows);
+            console.log('in third query');
+            var thirdQuery = "truncate stringParse;";
+            client.query(thirdQuery, function (err, result) {
+              if (err) {
+                console.log(err);
+                res.sendStatus(500);
+              }
+              else {
+                console.log('done with 3rd query');
+              }
+            })
+          }
+        })
+      }
     });
   });
 });
