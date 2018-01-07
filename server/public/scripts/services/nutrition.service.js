@@ -19,7 +19,7 @@ myApp.service('NutritionService', function($http, $location){
             }
         }
     }).then(function() {
-        self.getAnimalProducts(self.ingredientList)
+        self.getAnimalProducts(self.ingredientList);
     })
 }
 
