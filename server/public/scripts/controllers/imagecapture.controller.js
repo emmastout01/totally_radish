@@ -1,9 +1,10 @@
 myApp.controller('ImageCapture', ImageCapture);
 
-function ImageCapture(Upload,UserService,$http) {
+function ImageCapture(Upload,UserService,$http, NutritionService) {
 
     var image = this;
     var API_KEY = '25f539a74f88957' //
+    var parameter = '';
 
   //  var API_KEY = 'AIzaSyDnHEnyUqglQTflBIECVl5mZDks5M-xRLY';
   //  var API_URL = "https://vision.googleapis.com/v1/images:annotate?key="+API_KEY;
@@ -25,6 +26,8 @@ function ImageCapture(Upload,UserService,$http) {
           console.log(response.data);
           image.data = response.data.ParsedResults[0].ParsedText;
          console.log(image.data);
+         NutritionService.parameter = image.data;
+         console.log('ns param', NutritionService.parameter);
          // console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ', resp.data);
          image.processData();
 
@@ -33,7 +36,9 @@ function ImageCapture(Upload,UserService,$http) {
         }, function(evt) {
             image.progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
             // console.log('progress: ' + receipt.progressPercentage + '% ' + evt.config.data.file.name);
-        });
+        }).then(function() {
+            NutritionService.getNutrition();
+        })
 
     }; //End of uploadFile function
 //};
