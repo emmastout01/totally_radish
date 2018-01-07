@@ -9,7 +9,8 @@ myApp.service('NutritionService', function($http, $location){
     //console.log('nutrition service param', self.parameter);
     
     self.getNutrition = function() {
-        $http.get('https://api.nutritionix.com/v1_1/search/' + self.parameter + '?results=0:10&fields=item_name,brand_name,nf_ingredient_statement&appId=' + '3ec44756' + '&appKey=' + '915249de7bf1111281fa041ede07ebe3')
+        console.log('in get nutrition');
+        $http.get('https://api.nutritionix.com/v1_1/search/' + self.parameter + '?results=0:10&fields=item_name,brand_name,nf_ingredient_statement&appId=' + 'da9c09c2' + '&appKey=' + 'bb13614d3ce153fdb426f6f2c1401fb2')
     .then(function(response) {
         //console.log('full response', response);
         var possibleProducts = response.data.hits;

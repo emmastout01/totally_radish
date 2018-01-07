@@ -134,9 +134,10 @@ li a:hover {
 
 .resultDescription {
   width: 100%; 
-  margin: 20px;
+  margin: 24px;
   font-size: 20px;
   font-style: italic;
+  text-align: center;
 
 }
 
@@ -155,9 +156,16 @@ li a:hover {
 }
 
 .nonVeganIngredient {
-  border: 2px solid black;
-  padding: 4px;
+  background-color: #B12468;
+  border-radius: 3px;
+  color: white;
+  padding: 8px;
   margin: 4px;
+  font-size: 20px;
+}
+
+.contains {
+  font-size: 20px;
 }
 
 /* SUCCESS/FAILURE ANIMATIONS (for the next ~300 lines of code) */
