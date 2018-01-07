@@ -22,6 +22,9 @@ body, html {
     background-color: #8FA142;
 }
 
+.nav-center {
+  padding-left: 40px;
+}
 .instructions {
   background-color: #B12468;
 }
