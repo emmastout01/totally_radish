@@ -1,8 +1,8 @@
 myApp.controller('ImageCapture', ImageCapture);
 
 function ImageCapture(Upload,UserService,$http, NutritionService) {
-
     var image = this;
+    image.userObject = UserService.userObject;
     var API_KEY = '25f539a74f88957' //
     var parameter = '';
 
