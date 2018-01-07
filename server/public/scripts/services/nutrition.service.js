@@ -4,6 +4,7 @@ myApp.service('NutritionService', function($http, $location){
     self.productToSend = 'larabar';
     self.ingredientList = '';
     self.parameter = '';
+    self.animalProducts = [];
 
     console.log('nutrition service param', self.parameter);
     
@@ -28,6 +29,7 @@ myApp.service('NutritionService', function($http, $location){
     self.getAnimalProducts = function(ingredientList) {
         $http.get('/vegan/' + ingredientList).then(function(response) {
             console.log('got animal products', response);
+            self.animalProducts = response.data;
         })
     }
 
