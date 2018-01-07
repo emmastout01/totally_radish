@@ -27,7 +27,7 @@ body, html {
 }
 
 .login {
-  font-size: 16px;
+  font-size: 34px;
   font-weight: bold;
   color: #B12468;
 }
@@ -121,7 +121,17 @@ li a:hover {
 .borderless > tbody > tr > td {
     border: none;
     border-top: none;
+    text-align: left;
+    font-size: 18px;
 }
+
+.imagePreview {
+  margin-top: 40px;
+}
+/* 
+.buttonText {
+  font-size: 18px;
+} */
 
 .disable-font {
   color: #8C8C8D;

@@ -1,17 +1,17 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
     <div class="row text-center">
-        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
-            <h1 class="login">WELCOME!</h1>  
+        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-4">
+            <h1 class="login">Welcome, {{image.userObject.userName}}!</h1>  
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
-            <h4>Select your diet(s):</h4>
+        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-4">
+            <h3>Select your diet(s):</h3>
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
+        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-4">
             <table class="table borderless">
                 <tbody>
                     <tr>
@@ -26,7 +26,7 @@
                         <td ng-disabled="true">
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" value="" id="whole30Choice" ng-disabled="true">
-                              <label class="form-check-label disable-font" for="whole30Choice">
+                              <label class="form-check-label" for="whole30Choice">
                                 Whole 30
                               </label>
                             </div>
@@ -36,7 +36,7 @@
                         <td ng-disabled="true">
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" value="" id="vegeterianChoice" ng-disabled="true">
-                              <label class="form-check-label disable-font" for="vegeterianChoice">
+                              <label class="form-check-label" for="vegeterianChoice">
                                 Vegetarian
                               </label>
                             </div>
@@ -44,7 +44,7 @@
                         <td ng-disabled="true">
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" value="" id="paleoChoice" ng-disabled="true">
-                              <label class="form-check-label disable-font" for="paleoChoice">
+                              <label class="form-check-label" for="paleoChoice">
                                 Paleo
                               </label>
                             </div>
@@ -54,7 +54,7 @@
                         <td ng-disabled="true">
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" value="" id="ketoChoice" ng-disabled="true">
-                              <label class="form-check-label disable-font" for="ketoChoice">
+                              <label class="form-check-label" for="ketoChoice">
                                 Keto
                               </label>
                             </div>
@@ -62,7 +62,7 @@
                         <td ng-disabled="true">
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" value="" id="glutenChoice" ng-disabled="true">
-                              <label class="form-check-label disable-font" for="glutenChoice">
+                              <label class="form-check-label" for="glutenChoice">
                                 Gluten-free
                               </label>
                             </div>
@@ -80,7 +80,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
+        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-4">
             <form name="form" ng-submit="image.uploadFile()">
                     <input ngf-select ng-model="image.file"  name="file" id="file" placeholder="Choose File" class="btn btn-default btn-block" accept="image/*" capture="camera"/>
                 <button ng-disabled="image.file == null" class="btn btn-green btn-block" type="submit" ng-click="loadPic=true">Upload</button>
@@ -90,13 +90,13 @@
 
 
     <div class="row text-center" ng-if="image.file != null">
-        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
+        <!-- <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-4">
             <h5 class="login">Image Preview:</h5>
-        </div>
+        </div> -->
     </div>
     <div class="row text-center">
-        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
-            <img height="60%" width="60%" ngf-thumbnail="image.file" />
+        <div class="imagePreview col-sm-5 col-md-4 col-sm-offset-4 col-lg-4">
+            <img height="80%" width="80%" ngf-thumbnail="image.file" />
         </div>
     </div>
 </div>
