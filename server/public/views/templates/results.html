@@ -28,14 +28,14 @@
             </div>
             <br>
             <span class="primaryResult">Not vegan</span>
-            <p>Contains: <span class="nonVeganIngredient" ng-repeat="ingredient in rc.nonVeganIngredients">  {{ingredient}}  </span></p>
-            <div ng-repeat = "description in rc.nonVeganDescriptions">{{description}} </div> <br><br><br>
+            <p>Contains: <span class="nonVeganIngredient" ng-repeat="ingredient in rc.displayIngredients">  {{ingredient}}  </span></p>
+            <div ng-repeat = "description in rc.displayDescriptions">{{description}} </div> <br><br><br>
         </div>
     </div>
     <br>
     <br>
     <!-- This button is just a tester so we can see both the 'vegan' and 'not vegan' results. -->
-    <button class="btn btn-default" ng-click="rc.showResults()">Toggle results</button>
+  <!--   <button class="btn btn-default" ng-click="rc.showResults()">Toggle results</button> -->
 
 
 </div>
