@@ -1,17 +1,17 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
     <div class="row text-center">
-        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
+        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-4">
             <h1 class="login">WELCOME!</h1>  
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
+        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-4">
             <h4>Select your diet(s):</h4>
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
+        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-4">
             <table class="table borderless">
                 <tbody>
                     <tr>
@@ -80,7 +80,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
+        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-4">
             <form name="form" ng-submit="image.uploadFile()">
                     <input ngf-select ng-model="image.file"  name="file" id="file" placeholder="Choose File" class="btn btn-default btn-block" accept="image/*" capture="camera"/>
                 <button ng-disabled="image.file == null" class="btn btn-green btn-block" type="submit" ng-click="loadPic=true">Upload</button>
@@ -90,12 +90,12 @@
 
 
     <div class="row text-center" ng-if="image.file != null">
-        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
+        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-4">
             <h5 class="login">Image Preview:</h5>
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-3">
+        <div class="col-sm-5 col-md-4 col-sm-offset-4 col-lg-4">
             <img height="60%" width="60%" ngf-thumbnail="image.file" />
         </div>
     </div>
