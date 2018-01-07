@@ -18,6 +18,7 @@ myApp.config(function($routeProvider, $locationProvider) {
       controller: 'UserController as uc',
       resolve: {
         getuser : function(UserService){
+          console.log("username: ", UserService.getuser());
           return UserService.getuser();
         }
       }
