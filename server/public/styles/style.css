@@ -118,6 +118,15 @@ li a:hover {
   color: #eee;
 }
 
+.borderless > tbody > tr > td {
+    border: none;
+    border-top: none;
+}
+
+.disable-font {
+  color: #8C8C8D;
+}
+
 .resultContainer {
   display: flex;
   flex-direction: column;
