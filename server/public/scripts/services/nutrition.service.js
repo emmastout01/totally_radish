@@ -1,12 +1,10 @@
 myApp.service('NutritionService', function($http, $location){
-    console.log('NutritionService Loaded');
     var self = this;
     self.productToSend = 'larabar';
     self.ingredientList = '';
     self.parameter = '';
     self.animalProducts = [];
 
-    console.log('nutrition service param', self.parameter);
     
     self.getNutrition = function() {
         $http.get('https://api.nutritionix.com/v1_1/search/' + self.parameter + '?results=0:10&fields=item_name,brand_name,nf_ingredient_statement&appId=' + '3ec44756' + '&appKey=' + '915249de7bf1111281fa041ede07ebe3')
