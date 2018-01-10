@@ -4,7 +4,14 @@ New to being a vegan? Dazed and confused starting at incomprehendible lists of i
 
 ## Built With
 
-List technologies and frameworks here
+- AngularJS
+- Express
+- Node.js
+- PostgreSQL
+- Bootstrap
+- Passport
+- NutritionIX API
+- OCR API
 
 ## Getting Started
 
@@ -12,15 +19,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Link to software that is required to install the app (e.g. node).
+Install the following on your computer to run this app.
 
 - [Node.js](https://nodejs.org/en/)
-- List other prerequisites here
+- Postgresql
 
 
 ### Installing
 
-Steps to get the development environment running.
+
 
 ```sql
 CREATE TABLE "users" (
@@ -34,9 +41,6 @@ CREATE TABLE "users" (
 
 Include one or two screen shots of your project here (optional). Remove if unused.
 
-## Documentation
-
-Link to a read-only version of your scope document or other relevant documentation here (optional). Remove if unused.
 
 ### Completed Features
 
@@ -51,16 +55,16 @@ Features that you would like to add at some point in the future.
 
 - [ ] Feature c
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* Name of author(s)
+* Developers: Liz Haakenson, Levy Kohout, Kim Mai, and Emma Stout
+* UX Designer: Kelsey Gullickson
+* Project Manager and Researcher: Maham Maus
 
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
+# 
+
 # totally_radish
