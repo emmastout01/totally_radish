@@ -33,8 +33,8 @@ Run the SQL queries found in [this google document] in Postico to get TotallyRad
 
 ## Screen Shot
 
-Coming soon!
-
+![Landing page](server/public/styles/screenshot1.png)
+!([Not vegan)](server/public/styles/screenshot2.png)
 
 ### Completed Features
 
