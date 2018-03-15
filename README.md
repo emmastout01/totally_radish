@@ -22,7 +22,7 @@ These instructions will get you a copy of the project up and running on your loc
 Install the following on your computer to run this app.
 
 - [Node.js](https://nodejs.org/en/)
-- Postgresql
+- PostgreSQL
 
 
 ### Installing
