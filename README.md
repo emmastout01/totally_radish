@@ -38,14 +38,10 @@ Run the SQL queries found in [this google document] in Postico to get TotallyRad
 
 ### Completed Features
 
-High level list of items completed.
-
 - [x] User can upload a photo from their device. Upon clicking 'upload', a message will pop up telling the user whether or not the product is vegan.
 - [x] If the product is not vegan, a list of any non-vegan ingredients and their descriptions will be displayed.
 
 ### Next Steps
-
-Features that you would like to add at some point in the future.
 
 - [ ] Expand the app to include other diets, including gluten-free, Paleo, Whole 30, religious dietary restrictions, and others
 - [ ] Make the app mobile-responsive
@@ -58,8 +54,4 @@ Features that you would like to add at some point in the future.
 * Project Manager and Researcher: Maham Maus
 
 
-## Acknowledgments
 
-# 
-
-# totally_radish
